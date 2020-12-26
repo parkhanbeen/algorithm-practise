@@ -1,4 +1,4 @@
-package com.algorithm.codeup.basic;
+package com.algorithm.codeup.basic.codeup10;
 
 public class CodeUp1003 {
     public static void main(String[] args) {
