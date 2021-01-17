@@ -3,26 +3,26 @@ package com.algorithm.codeup.basic.codeup100;
 import java.util.Scanner;
 
 /**
- * 입력 : 시작 값(a), 등비의 값(r), 몇 번째 인지를 나타내는 정수(n)가
- * 공백을 두고 입력된다.(모두 0 ~ 10)
+ * 입력 : 같은 날 동시에 가입한 인원 3명이 규칙적으로 방문하는,
+ * 방문 주기가 공백을 두고 입력된다. (단, 입력값은 100이하의 자연수이다.)
  *
- * 출력 : n번째 수를 출력한다.
+ * 출력 : 3명이 다시 모두 함께 방문해 문제를 풀어보는 날(동시 가입/등업 후 며칠 후?)을 출력한다.
  */
 public class CodeUp1092 {
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
 
-        long a = sc.nextLong(); // 시작 값
-        long b = sc.nextLong(); // 등차
-        long c = sc.nextLong(); // 몇 번째 수
+        int a = sc.nextInt();
+        int b = sc.nextInt();
+        int c = sc.nextInt();
 
-        long sum = a;
+        int day = 1;
 
-        for (int i = 1; i < c; i++) {
-            sum = sum * b;
+        while(day % a !=0 || day % b != 0 || day % c != 0) {
+            day++;
         }
-        System.out.println(sum);
+        System.out.println(day);
 
 
     }
