@@ -3,7 +3,7 @@ package com.algorithm.datastructure.hash;
 import java.util.LinkedList;
 
 class HashTable {
-  class Node {
+  static class Node {
     String key;
     String value;
 
