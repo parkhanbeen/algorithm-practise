@@ -31,6 +31,7 @@ class LinkedList {
     Node newNode = new Node(data);
 
     newNode.link = preNode.link;
+    preNode.link = newNode;
 
   }
 
@@ -61,7 +62,7 @@ class LinkedList {
 
       while(tempNode != null) {
 
-        if(data.equals( tempNode.getData() )) {
+        if(data.equals(tempNode.getData())) {
 
           if(tempNode.link == null) {
             preNode.link = null;
@@ -172,6 +173,8 @@ public class LinkedListExample {
     linkedList.printList();
 
     linkedList.reverse();
+    linkedList.printList();
+    linkedList.add(linkedList.searchNode("mon"), "days");
     linkedList.printList();
   }
 }
