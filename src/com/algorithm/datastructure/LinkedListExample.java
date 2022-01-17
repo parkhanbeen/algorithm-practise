@@ -54,7 +54,7 @@ class LinkedList {
     Node preNode = head;
     Node tempNode = head.link;
 
-    if(data.equals( preNode.getData() )) {
+    if (data.equals(preNode.getData())) {
       head = preNode.link;
       preNode.link = null;
 
@@ -62,9 +62,9 @@ class LinkedList {
 
       while(tempNode != null) {
 
-        if(data.equals(tempNode.getData())) {
+        if (data.equals(tempNode.getData())) {
 
-          if(tempNode.link == null) {
+          if (tempNode.link == null) {
             preNode.link = null;
 
           } else {
@@ -87,11 +87,11 @@ class LinkedList {
     Node preNode;
     Node tempNode;
 
-    if(head == null) {
+    if (head == null) {
       return;
     }
 
-    if(head.link == null) {
+    if (head.link == null) {
       head = null;
     } else {
       preNode = head;
@@ -110,8 +110,8 @@ class LinkedList {
   public Node searchNode(String data) {
     Node tempNode = this.head;
 
-    while(tempNode != null) {
-      if(data.equals(tempNode.getData())) {
+    while (tempNode != null) {
+      if (data.equals(tempNode.getData())) {
         return tempNode;
       } else {
         tempNode = tempNode.link;
@@ -126,7 +126,7 @@ class LinkedList {
     Node currentNode = null;
     Node preNode = null;
 
-    while(nextNode != null) {
+    while (nextNode != null) {
       preNode = currentNode;
       currentNode = nextNode;
       nextNode = nextNode.link;
@@ -139,7 +139,7 @@ class LinkedList {
   public void printList() {
     Node tempNode = this.head;
 
-    while(tempNode != null) {
+    while (tempNode != null) {
       System.out.print(tempNode.getData() + " ");
       tempNode = tempNode.link;
     }
