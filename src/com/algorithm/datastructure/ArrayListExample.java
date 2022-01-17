@@ -90,7 +90,7 @@ class ArrayList<T> {
 public class ArrayListExample {
   public static void main(String[] args) {
     System.out.println("=====짧은머리 개발자=====");
-    ArrayList<Integer> arr = new ArrayList<Integer>();
+    ArrayList<Integer> arr = new ArrayList<>();
     System.out.println("배열 크기 : " + arr.getCapacity());
     System.out.println("데이터 삽입 1~5");
     for(int i = 0; i < 5; i++) {
