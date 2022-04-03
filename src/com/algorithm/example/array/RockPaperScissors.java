@@ -55,7 +55,7 @@ public class RockPaperScissors {
 
     for (int i = 0; i < gameCount; i++) {
       int minus = aArr[i] - bArr[i];
-      if (aArr[i] == bArr[i]) {
+      if (minus == 0) {
         winners.add("D");
       } else if (minus == 1 || minus == -2) {
         winners.add("A");
