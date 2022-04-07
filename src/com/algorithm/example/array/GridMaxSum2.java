@@ -24,7 +24,7 @@ import java.util.Scanner;
  * 예시 출력 1
  * 155
  */
-public class GridMaxSum {
+public class GridMaxSum2 {
   public static void main(String[] args) {
     Scanner sc = new Scanner(System.in);
     int count = sc.nextInt();
@@ -39,45 +39,34 @@ public class GridMaxSum {
   }
 
   private static int solution(int[][] grid) {
-    int max = 0;
-    int tmp1 = 0;
+    int result = Integer.MIN_VALUE;
+    int size = grid.length;
+    int sum1;
+    int sum2;
 
-    for (int i = 0; i < grid.length; i++) {
-      int tmp = 0;
-
-      tmp1 += grid[i][i];
-
-      for (int j = 0; j < grid.length; j++) {
-        tmp += grid[i][j];
+    // 행과 열의 합 구하기
+    for (int i = 0; i < size; i++) {
+      sum1 = 0;
+      sum2 = 0;
+      for (int j = 0; j < size; j++) {
+        sum1 = grid[i][j];
+        sum2 = grid[j][i];
       }
-
-      if (max < tmp) {
-        max = tmp;
-      }
-      if (max < tmp1) {
-        max = tmp1;
-      }
+      result = Math.max(result, sum1);
+      result = Math.max(result, sum2);
     }
 
-    for (int j = 0; j < grid.length; j++) {
-      int tmp = 0;
-      for (int i = 0; i < grid.length; i++) {
-        tmp += grid[i][j];
-      }
-      if (max < tmp) {
-        max = tmp;
-      }
-    }
 
-    int tmpClos = 0;
-    for (int i = 0; i < grid.length; i++) {
-      int size = grid.length - 1;
-      tmpClos += grid[size][i];
+    // 두 대각선의 합 구하기
+    sum1 = 0;
+    sum2 = 0;
+    for (int i = 0; i < size; i++) {
+      sum1 += grid[i][i];
+      sum2 += grid[i][size - i - 1];
     }
+    result = Math.max(result, sum1);
+    result = Math.max(result, sum2);
 
-    if (max < tmpClos) {
-      max = tmpClos;
-    }
-    return max;
+    return result;
   }
 }
