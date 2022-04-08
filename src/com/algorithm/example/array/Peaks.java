@@ -28,8 +28,8 @@ import java.util.Scanner;
  */
 public class Peaks {
 
-  private static int[] DX = {-1, 0, 1, 0};
-  private static int[] DY = {0, 1, 0, -1};
+  private final static int[] DX = {-1, 0, 1, 0};
+  private final static int[] DY = {0, 1, 0, -1};
 
   public static void main(String[] args) {
     Scanner sc = new Scanner(System.in);
