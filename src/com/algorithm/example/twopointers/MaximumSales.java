@@ -39,8 +39,11 @@ public class MaximumSales {
     System.out.println(solution(dayCount, maxDays, days));
   }
 
+  /**
+   * 슬라이딩 윈도우 알고리즘 적용.
+   */
   private static int solution(int dayCount, int maxDays, int[] days) {
-    int result = 0;
+    int result;
     int sum = 0;
 
     for (int i = 0; i < maxDays; i++) {
