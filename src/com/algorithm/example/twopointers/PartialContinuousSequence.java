@@ -39,15 +39,17 @@ public class PartialContinuousSequence {
 
   private static int solution(int n, int m, int[] sequence) {
     int result = 0;
-    int equalsNumber = 0;
-
-    for (int i = 0; i < n; i++) {
-      for (int j = i; j < n; j++) {
-        equalsNumber += sequence[j];
-        if (equalsNumber == m) {
+    int sum = 0;
+    int lt = 0;
+    for (int rt = 0; rt < n; rt++) {
+      sum += sequence[rt];
+      if (sum == m) {
+        result++;
+      }
+      while (sum >= m) {
+        sum -= sequence[lt++];
+        if (sum == m) {
           result++;
-          equalsNumber = 0;
-          break;
         }
       }
     }
